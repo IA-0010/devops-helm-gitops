@@ -1,5 +1,5 @@
 # Cambiar este valor de 1 a 2, hacer commit y push para demostrar GitOps.
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: nginx
