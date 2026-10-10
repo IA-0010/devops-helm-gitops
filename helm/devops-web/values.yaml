@@ -1,0 +1,19 @@
+# Cambiar este valor de 1 a 2, hacer commit y push para demostrar GitOps.
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: "1.27-alpine"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    cpu: 25m
+    memory: 32Mi
+  limits:
+    cpu: 150m
+    memory: 96Mi

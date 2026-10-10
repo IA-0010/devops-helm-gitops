@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-web
+  labels:
+    app.kubernetes.io/name: devops-web
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: devops-web
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP

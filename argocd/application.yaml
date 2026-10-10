@@ -1,0 +1,24 @@
+# ANTES DE APLICAR: sustituye IA-0010 por tu usuario personal de GitHub.
+# El repositorio debe existir, ser accesible por Argo CD y tener la rama main.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-web
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/IA-0010/devops-helm-gitops.git
+    targetRevision: main
+    path: helm/devops-web
+    helm:
+      releaseName: devops-web
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

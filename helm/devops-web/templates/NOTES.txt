@@ -1,0 +1,3 @@
+Para abrir la aplicacion en un terminal adicional:
+  kubectl -n {{ .Release.Namespace }} port-forward svc/devops-web 8081:80
+Luego visita http://localhost:8081

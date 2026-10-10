@@ -1,0 +1,11 @@
+# Archivos y secretos locales
+.env
+*.pem
+*.key
+kubeconfig*
+.DS_Store
+Thumbs.db
+# Evidencias temporales locales
+evidencias/*.txt
+# Overrides locales
+argocd/application-local.yaml
